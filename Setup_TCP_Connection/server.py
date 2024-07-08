@@ -4,6 +4,9 @@ import threading
 
 def connect_a_client(conn,addr):
     print("new client has been connected")
+    data=conn.recv(2048)
+    print("data comes from a client is ",data)
+    conn.sendall("server has recived the data")
 
 HOST="localhost"
 PORT=3000
