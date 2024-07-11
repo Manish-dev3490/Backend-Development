@@ -12,12 +12,12 @@ function m1(req, res, next) {
     next();
 }
 
-function m2(req, res, next) {
+function m2(req, res) {
     console.log("Inside middleware 2");
     next();
 }
 
-APP.get('/home', m2, m1, (req, res) => {
+APP.get('/home', m1,m2, (req, res) => {
     console.log("Api has treturned the response");
     res.send("hello world");
 });
