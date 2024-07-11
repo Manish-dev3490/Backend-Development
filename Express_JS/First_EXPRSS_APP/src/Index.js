@@ -17,7 +17,7 @@ function m2(req, res, next) {
     next();
 }
 
-APP.get('/home', m2,m1, (req, res) => {
+APP.get('/home', m2, m1, (req, res) => {
     console.log("Api has treturned the response");
     res.send("hello world");
 });
