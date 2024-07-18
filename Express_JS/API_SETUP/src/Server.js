@@ -1,12 +1,13 @@
-const express=require('express');
-const dotenv=require('dotenv');
+const express = require('express');
+const dotenv = require('dotenv');
+const HomePingController = require('./Controller/HomeController');
 dotenv.config();
 
-const PORT=process.env.PORT;
-const app=express();
+const PORT = 3000;
+const app = express();
 
-console.log(process.env.PORT);
+app.get('/home', HomePingController)
 
-app.listen(PORT,()=>{
+app.listen(PORT, () => {
     console.log(`Server is running at ${PORT}`);
 })
