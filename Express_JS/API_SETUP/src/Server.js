@@ -6,11 +6,15 @@ dotenv.config();
 const app = express();
 
 
-const PORT = 3000;
+const PORT = 3000;;
+
+
+
 
 app.use(router);
 app.use(customrouter);
 
 app.listen(PORT, () => {
-    console.log(`Server is running at ${PORT}`);
+    console.log(process.env.PORT);
+    console.log(`Server is running at ${process.env.PORT}`,);
 })
