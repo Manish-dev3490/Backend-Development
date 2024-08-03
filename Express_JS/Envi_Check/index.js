@@ -12,6 +12,8 @@ console.log(`Server running on port ${port}`);
 console.log(`Database host: ${dbHost}`);
 console.log(`Database user: ${dbUser}`);
 console.log(`Database password: ${dbPass}`);
+console.log(process.env);
+
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
