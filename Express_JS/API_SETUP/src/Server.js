@@ -1,8 +1,8 @@
 const express = require('express');
-const dotenv = require('dotenv');
+const dotenv=require('dotenv');
+dotenv.config();
 const router = require('./routes');
 const customrouter = require('./routes/custom');
-dotenv.config();
 const app = express();
 
 
@@ -15,6 +15,7 @@ app.use(router);
 app.use(customrouter);
 
 app.listen(PORT, () => {
-    console.log(process.env.PORT);
-    console.log(`Server is running at ${process.env.PORT}`,);
+    console.log(process.env.NAME);
+    
+    console.log(`Server is running at ${PORT}`,);
 })
