@@ -16,9 +16,23 @@ async function main() {
     // we are are reffering to the document named user which we have created in compass using GUI interface 
     const collection = db.collection('user');
 
-    // we are getting access to al the documents presented in our document
+
+    const data = {
+        firstname: "Akaash",
+        lastname: "Sharma",
+        age: 22,
+        contact: 987654321
+    }
+
+     // CREATE
+    const insertResult = await collection.insertMany([data]);
+    console.log('Inserted documents =>', insertResult);
+
+    // READ
     const findResult = await collection.find({}).toArray();
     console.log('Found documents =>', findResult);
+
+    // UPDATE
 
     return 'Done.';
 }
