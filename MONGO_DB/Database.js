@@ -18,13 +18,13 @@ async function main() {
 
 
     const data = {
-        firstname: "Akaash",
+        firstname: "vikas",
         lastname: "Sharma",
         age: 22,
         contact: 987654321
     }
 
-     // CREATE
+    // CREATE
     const insertResult = await collection.insertMany([data]);
     console.log('Inserted documents =>', insertResult);
 
@@ -32,7 +32,14 @@ async function main() {
     const findResult = await collection.find({}).toArray();
     console.log('Found documents =>', findResult);
 
+
     // UPDATE
+    const updateResult = await collection.updateOne({ firstname: "Manish" }, { $set: { firstname: "Deepak" } });
+    console.log('Updated documents =>', updateResult);
+
+    // DELETE
+    const deleteResult = await collection.deleteMany({ firstname: "Deepak" });
+    console.log('Deleted documents =>', deleteResult);
 
     return 'Done.';
 }
